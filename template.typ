@@ -1,8 +1,8 @@
 // 字体
 #let font = (
-  main: "Segoe UI",
+  main: "Source Han Sans SC",
   mono: "Consolas",
-  cjk: "Microsoft YaHei",
+  cjk: "Source Han Sans SC",
 )
 
 // 图标
@@ -22,6 +22,7 @@
 #let resume(
   size: 10pt,
   theme-color: rgb("#26267d"),
+  font: font,
   margin: (
     top: 1.5cm,
     bottom: 2cm,
@@ -148,11 +149,11 @@
   })
   grid(
     columns: (1fr, 1fr),
-    gutter: 0.6em,
-    column-gutter: 1em,
+    row-gutter: 0.8em,
+    column-gutter: 1.5em,
     ..items,
   )
-  v(0.8em)
+  v(1em)
 }
 
 

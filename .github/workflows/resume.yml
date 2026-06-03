@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "resume.typ"
+      - "profile.png"
+      - "template.typ"
 
 jobs:
   build:
@@ -13,8 +17,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: typst-community/setup-typst@v3
+        with: 
+          cache: true
 
-      - run: typst compile resume.typ resume.pdf
+      - run: typst compile --font-path fonts resume.typ resume.pdf
 
       - uses: appleboy/scp-action@v0.1.7
         with:

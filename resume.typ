@@ -17,6 +17,11 @@
 #show: resume.with(
   // 字体和基准大小
   size: 10pt,
+  font: (
+    main: "Source Han Sans SC",
+    mono: "Consolas",
+    cjk: "Source Han Sans SC",
+  ),
   // 标题颜色
   theme-color: theme-color,
   // 控制纸张的边距
@@ -41,16 +46,16 @@
   #info(
     color: theme-color,
     (
-      icon: fa-phone,
-      content: "17532597005",
-    ),
-    (
       icon: fa-building-columns,
       content: "河北工程大学",
     ),
     (
       icon: fa-graduation-cap,
       content: "软件工程",
+    ),
+    (
+      icon: fa-phone,
+      content: "17532597005",
     ),
     (
       icon: fa-envelope,
