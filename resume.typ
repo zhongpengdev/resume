@@ -101,14 +101,14 @@
   [ *全国大学生物理实验竞赛* ],
   [ *全国一等奖* ],
   date[ 2025 年 12 月 ],
-  note: [ 负责软件系统开发，基于 PyQt 与 OpenCV 搭建图像处理与交互系统，并设计了圆心识别算法。 ],
+  note: [ 负责软件系统开发，基于 PyQt 与 OpenCV 搭建图像处理与交互软件，设计和调优了圆心识别算法。 ],
 )
 
 #item(
   [ *亚太杯大学生数学建模比赛* ],
   [ *铜奖* ],
   date[ 2024 年 12 月 ],
-  note: [ 负责水下图像预处理与物理建模，基于 OpenCV 实现图像去噪与质量优化，并参与水下物理模型的推导。 ],
+  note: [ 基于 OpenCV 对水下退化图像去噪与质量优化，参与水下图像退化模型的物理建模过程与推导。 ],
 )
 
 == 项目经历
@@ -122,7 +122,7 @@
   date[ 2026 年 01 月 – 2026 年 06 月 ],
 )
 
-#tech[ FastAPI, Asyncio, WebSocket, Redis, PostgreSQL, SQLAlchemy ]
+#tech[ FastAPI, Asyncio, WebSocket, Redis, PostgreSQL ]
 
 基于 FastAPI 与 Claude Agent SDK 开发的生产级工具编排与业务处理后端。向下管理多个 MCP 的工具链，向上基于 WebSocket 交付双向流式对话与动态工具路由执行环境。
 
@@ -145,7 +145,7 @@
   date[ 2025 年 03 月 – 2025 年 09 月 ],
 )
 
-#tech[ Python, PyQt6, OpenCV, NumPy, PyTorch, PyQtGraph ]
+#tech[ Python, PyQt6, OpenCV, NumPy, PyTorch ]
 
 该系统为2025年全国大学生物理实验竞赛一等奖核心算法与控制端，是一款图像处理与自动计数桌面软件。
 

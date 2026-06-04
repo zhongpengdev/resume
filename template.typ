@@ -168,8 +168,8 @@
 
 // 技术: 字体变细
 #let tech(body) = block(
-  above: 0.65em,
-  below: 0.65em,
+  above: 0.9em,
+  below: 0.9em,
   {
     set text(weight: "extralight")
     body
