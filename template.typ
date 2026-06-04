@@ -24,10 +24,10 @@
   theme-color: rgb("#26267d"),
   font: font,
   margin: (
-    top: 1.5cm,
-    bottom: 2cm,
-    left: 2cm,
-    right: 2cm,
+    top: 1.2cm,
+    bottom: 1.2cm,
+    left: 1.4cm,
+    right: 1.4cm,
   ),
   photograph: "",
   photograph-width: 0em,
@@ -45,12 +45,13 @@
 
   // 标题及小标题样式
   show heading: set text(theme-color, 1.1em)
+  show heading: set block(above: 1.2em, below: 0.7em)
 
   // 二级标题下加一条横线
   show heading.where(level: 2): it => stack(
     v(0.1em),
     it,
-    v(0.5em),
+    v(0.3em),
     line(length: 100%, stroke: 0.05em + theme-color),
     v(0.1em),
   )
@@ -59,7 +60,7 @@
   // set list(indent: 1em, body-indent: 0.8em, marker: faAngleRight)
   // 上面的语句无法精确控制图标位置, 因此改用了下列方法重写 list
   show list: it => stack(
-    spacing: 0.4em,
+    spacing: 0.6em,
     ..it.children.map(item => {
       grid(
         columns: (2em, 1fr),
@@ -77,7 +78,7 @@
   show link: set text(fill: theme-color)
 
   // 主体设定
-  set par(justify: true, spacing: 1em)
+  set par(justify: true, spacing: 0.8em)
 
   // 首部与照片
 
@@ -166,21 +167,34 @@
 
 
 // 技术: 字体变细
-#let tech(body) = block({
-  set text(weight: "extralight")
-  body
-})
+#let tech(body) = block(
+  above: 0.65em,
+  below: 0.65em,
+  {
+    set text(weight: "extralight")
+    body
+  }
+)
 
 // 项目
 #let item(
   title,
   desc,
   endnote,
+  note: none,
 ) = {
-  v(0.25em)
+  v(0.8em)
   grid(
     columns: (30%, 1fr, auto),
     gutter: 0em,
     title, desc, endnote,
   )
+  if note != none {
+    v(0.25em)
+    block(
+      width: 100%,
+      inset: (left: 0.5em),
+      text(size: 0.9em, fill: rgb(80, 80, 80), note)
+    )
+  }
 }
