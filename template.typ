@@ -1,8 +1,8 @@
 // 字体
 #let font = (
-  main: "Source Han Sans SC",
-  mono: "Consolas",
-  cjk: "Source Han Sans SC",
+  main: "Noto Sans",
+  mono: "Noto Sans Mono",
+  cjk: "Noto Sans CJK SC",
 )
 
 // 图标
@@ -132,7 +132,7 @@
   set text(font: (font.mono, font.cjk), fill: color)
   set par(justify: false)
   let items = infos.pos().map(dir => {
-    box({
+    let item = box({
       if "icon" in dir {
         if type(dir.icon) == str {
           icon(dir.icon)
@@ -147,6 +147,11 @@
         dir.content
       }
     })
+    if "wide" in dir and dir.wide {
+      grid.cell(colspan: 2)[#item]
+    } else {
+      item
+    }
   })
   grid(
     columns: (1fr, 1fr),
@@ -182,13 +187,27 @@
   desc,
   endnote,
   note: none,
+  title-below: false,
 ) = {
   v(0.8em)
-  grid(
-    columns: (30%, 1fr, auto),
-    gutter: 0em,
-    title, desc, endnote,
-  )
+  if title-below {
+    grid(
+      columns: (1fr, auto),
+      gutter: 0em,
+      {
+        title
+        v(0.1em)
+        text(size: 0.9em, fill: rgb(80, 80, 80), desc)
+      },
+      endnote,
+    )
+  } else {
+    grid(
+      columns: (30%, 1fr, auto),
+      gutter: 0em,
+      title, desc, endnote,
+    )
+  }
   if note != none {
     v(0.25em)
     block(
